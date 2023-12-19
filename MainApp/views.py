@@ -25,7 +25,7 @@ class AsyncTradingView(APIView):
         return Response(
             {
                 "message": "File processed.",
-                "download_url": f"{request.build_absolute_uri('/')}{settings.MEDIA_URL}downloads/{unique_filename}",
+                "download_url": f"{request.build_absolute_uri('/')}{settings.MEDIA_URL}downloads/{f'candles_data_{int(time())}.json'}",
             }
         )
 
