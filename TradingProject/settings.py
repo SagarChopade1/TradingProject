@@ -42,10 +42,15 @@ INSTALLED_APPS = [
 
 
 # third party apps
-INSTALLED_APPS += ["rest_framework", "drf_yasg"]
+INSTALLED_APPS += [
+    "rest_framework",
+    "drf_yasg",
+]
 
 # personal apps
-INSTALLED_APPS += ["MainApp"]
+INSTALLED_APPS += [
+    "MainApp",
+]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

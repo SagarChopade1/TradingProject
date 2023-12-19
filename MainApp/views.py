@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from urllib.parse import urljoin
 from django.core.files.base import ContentFile
 from django.http import FileResponse
 from .serializers import UploadFileSerializer
@@ -25,7 +26,7 @@ class AsyncTradingView(APIView):
         return Response(
             {
                 "message": "File processed.",
-                "download_url": f"{request.build_absolute_uri('/')}{settings.MEDIA_URL}downloads/{f'candles_data_{int(time())}.json'}",
+                "download_url":urljoin(request.build_absolute_uri('/'), f"{settings.MEDIA_URL}downloads/candles_data_{int(time())}.json") if settings.DEBUG  else urljoin(request.build_absolute_uri('/'),f"download/candles_data_{int(time())}.json") 
             }
         )
 
