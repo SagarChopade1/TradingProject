@@ -38,7 +38,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+]
+
+
+# third party apps
+INSTALLED_APPS += [
     "rest_framework",
+    "drf_yasg",
+]
+
+# personal apps
+INSTALLED_APPS += [
     "MainApp",
 ]
 

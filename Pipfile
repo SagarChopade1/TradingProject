@@ -6,7 +6,8 @@ name = "pypi"
 [packages]
 django = "==5.0"
 djangorestframework = "==3.14.0"
-pandas = "*"
+pandas = "==2.1.4"
+drf-yasg = {extras = ["validation"], version = "==1.21.7"} # Swagger/OpenAPI support
 
 [dev-packages]
 
