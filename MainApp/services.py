@@ -24,7 +24,7 @@ class Candle:
 
 
 async def process_csv(file, timeframe):
-    df = pd.read_csv(file,low_memory=False)
+    df = pd.read_csv(file, low_memory=False)
     df["DateTime"] = pd.to_datetime(df["DATE"].astype(str) + " " + df["TIME"])
     resampled_df = df.resample(f"{timeframe}T", on="DateTime").agg(
         {"OPEN": "first", "HIGH": "max", "LOW": "min", "CLOSE": "last"}
